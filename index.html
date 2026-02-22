@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Video on Key Press</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #222;
+      color: white;
+      flex-direction: column;
+      font-family: sans-serif;
+    }
+    video {
+      max-width: 80%;
+      max-height: 60%;
+      margin-top: 20px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Press "1" to play the video</h1>
+  <video id="myVideo" controls>
+    <source src="1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const video = document.getElementById('myVideo');
+
+    // Hide the video until key is pressed
+    video.style.display = 'none';
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === '1') {
+        video.style.display = 'block'; // show video
+        video.play(); // play video
+      }
+    });
+  </script>
+</body>
+</html>
